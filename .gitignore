@@ -416,3 +416,20 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Node / React
+dist/
+.next/
+*.local
+
+# Secrets — never commit these
+appsettings.Development.json
+appsettings.Local.json
+
+# Cursor
+.cursor/
+.cursorignore
+
+# OS
+.DS_Store
+Thumbs.db
