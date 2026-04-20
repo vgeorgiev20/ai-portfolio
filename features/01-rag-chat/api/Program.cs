@@ -1,4 +1,5 @@
 using Api.Services;
+using Microsoft.SemanticKernel;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,9 +16,33 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Services.AddScoped<IChatService, MockChatService>();
+
+var config = builder.Configuration;
+
+builder.Services.AddOpenAIChatCompletion(
+    modelId: config["OpenAI:ModelId"]!,
+    apiKey: config["OpenAI:ApiKey"]!
+);
+
+
+builder.Services.AddScoped<IChatService, OpenAIChatService>();
+builder.Services.AddSingleton<DocumentChunkingService>();
+builder.Services.AddSingleton<RagMemoryService>();
 
 var app = builder.Build();
+
+// Index the PDF on startup
+using (var scope = app.Services.CreateScope())
+{
+    var chunker = scope.ServiceProvider.GetRequiredService<DocumentChunkingService>();
+    var ragMemory = scope.ServiceProvider.GetRequiredService<RagMemoryService>();
+
+    var pdfPath = Path.Combine(AppContext.BaseDirectory, "Documents", "tenancy.pdf");
+    var chunks = chunker.ChunkPdf(pdfPath);
+    await ragMemory.IndexChunksAsync(chunks);
+    
+    Console.WriteLine($" Indexed {chunks.Count} chunks from tenancy PDF");
+}
 
 app.UseCors(CorsPolicyName);
 
