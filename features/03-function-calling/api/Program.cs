@@ -135,3 +135,12 @@ public sealed class MathTools
         }
     }
 }
+
+[KernelFunction("searchWeb")]
+[Description("Search the web for current information.")]
+public async Task<string> SearchWeb([Description("Search query")] string query)
+{
+    // call Tavily API
+    // return results as string
+    // model formats it naturally
+}
