@@ -429,6 +429,7 @@ appsettings.Local.json
 # Cursor
 .cursor/
 .cursorignore
+.claude/
 
 # OS
 .DS_Store
