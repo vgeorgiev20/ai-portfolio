@@ -8,7 +8,7 @@
             "module": "uvicorn",
             "args": ["main:app","--port", "8001"],
             "jinja": true,
-            "cwd": "${workspaceFolder}/features/12-model-routing/backend"
+            "cwd": "${workspaceFolder}/features/07-agent/backend"
         }
     ]
 }
