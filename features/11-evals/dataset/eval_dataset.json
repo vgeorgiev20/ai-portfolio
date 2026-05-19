@@ -1,0 +1,65 @@
+[
+  {
+    "id": "tc-001",
+    "category": "easy",
+    "question": "What is a co-tenant under the Residential Tenancies Act?",
+    "ground_truth": "A co-tenant is a tenant who is one of 2 or more tenants under a residential tenancy agreement.",
+    "expected_in_context": true
+  },
+  {
+    "id": "tc-002",
+    "category": "easy",
+    "question": "What is a holding fee?",
+    "ground_truth": "A holding fee is an amount paid or required to be paid to a person for not letting premises pending the making of a residential tenancy agreement.",
+    "expected_in_context": true
+  },
+  {
+    "id": "tc-003",
+    "category": "easy",
+    "question": "What is a periodic agreement?",
+    "ground_truth": "A periodic agreement is a residential tenancy agreement that is not a fixed term agreement.",
+    "expected_in_context": true
+  },
+  {
+    "id": "tc-004",
+    "category": "hard",
+    "question": "Does the Residential Tenancies Act apply to serviced apartments?",
+    "ground_truth": "No. The Act does not apply to serviced apartments, defined as buildings or parts of buildings used to provide self-contained tourist and visitor accommodation that are regularly cleaned by or on behalf of the owner or manager.",
+    "expected_in_context": true
+  },
+  {
+    "id": "tc-005",
+    "category": "hard",
+    "question": "Can a 99-year lease be a residential tenancy agreement under this Act?",
+    "ground_truth": "No. The Act does not apply to agreements with a term that equals or exceeds 99 years, including any further term available under an option.",
+    "expected_in_context": true
+  },
+  {
+    "id": "tc-006",
+    "category": "hard",
+    "question": "Who does the definition of landlord include beyond the person who grants the right to occupy?",
+    "ground_truth": "The definition of landlord includes a successor in title to the residential premises whose interest is subject to the interest of the tenant, and a tenant who has granted the right to occupy residential premises to a sub-tenant.",
+    "expected_in_context": true
+  },
+  {
+    "id": "tc-007",
+    "category": "adversarial",
+    "question": "What is the maximum bond a landlord can charge in Victoria?",
+    "ground_truth": null,
+    "expected_in_context": false
+  },
+  {
+    "id": "tc-008",
+    "category": "adversarial",
+    "question": "What is the GST rate in Australia?",
+    "ground_truth": null,
+    "expected_in_context": false
+  },
+  {
+    "id": "tc-009",
+    "category": "adversarial",
+    "question": "What are the penalties for tax evasion under NSW law?",
+    "ground_truth": null,
+    "expected_in_context": false
+  }
+]

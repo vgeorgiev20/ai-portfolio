@@ -85,3 +85,7 @@ response_format  # feature 08 code review
 tools + tool_choice  # feature 03, 07
 seed             # when you need reproducible output for testing
 timeout          # production only
+--------------------------------------------------------------------
+python -m venv venv        # create it (once)
+venv\Scripts\activate      # activate it (every new terminal session)
+pip install -r requirements.txt  # install deps into it
